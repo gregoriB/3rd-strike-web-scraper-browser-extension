@@ -3,7 +3,7 @@
   "manifest_version": 2,
 
   "name": "3S Frame Data Scraper",
-  "version": "1.0",
+  "version": "1.1",
   "description": "This extension allows you to download JSON formatted frame data from http://ensabahnur.free.fr/BastonNew/",
 
   "content_scripts": [{
