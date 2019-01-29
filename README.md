@@ -1,6 +1,6 @@
 #
 # 3rd Strike Frame Data Web Scraper
-This extension allows you to scrape web data from [http://ensabahnur.free.fr/BastonNew/](http://ensabahnur.free.fr/BastonNew/) and download it in the JSON-format.
+This extension allows you to scrape web data from [http://ensabahnur.free.fr/BastonNew/](http://ensabahnur.free.fr/BastonNew/) and download it in the JSON format.
 
 ## Installation
 In the chrome browser, navigate to `chrome://extensions/` and click the `load unpacked` button to load in the extension.  In Firefox, navigate to `about:debugging` and click the `load temporary add-on...` button.
