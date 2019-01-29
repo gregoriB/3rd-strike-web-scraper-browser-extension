@@ -48,7 +48,7 @@ const mapCancelData = (row) => {
 const downloadFile = () => {
   const file = new Blob([JSON.stringify(charData, null, '\t')], {type: 'application/json'}),
         a    = document.createElement('a'),
-        name = charData.name.split(' ')[0] + ' ' + charData.category + '.json';
+        name = charData.name.split(' / ')[0] + ` - ${charData.category}.json`;
   document.body.appendChild(a); // download doesn't work in firefox unless the <a> exists in the body
   a.style.display = 'none';
   a.href = URL.createObjectURL(file);
@@ -61,7 +61,11 @@ function exportObject() {
   if (this.id === 'general_basic' || this.id === 'general_moves') return;
  
   setTimeout(() => {
-    buildObject(this.innerText);
+    // cleaning up innerText of category type
+    let type = this.innerText.split('- ')[1];
+    if (type[type.length - 1] === '.') type = type.split('.')[0];
+
+    buildObject(type);
     downloadFile();
   }, 1000); // setTimeout gives the webpage time to fetch the data from the database
 }
