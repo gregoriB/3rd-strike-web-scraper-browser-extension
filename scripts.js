@@ -4,8 +4,8 @@ const moveSet  = document.querySelectorAll('li'),
 let charData = {}
 
 function buildObject(type) {
-  charData.name = charName.innerText;
-  charData.category = type;
+  charData.Name = charName.innerText;
+  charData.Category = type;
   const dd = document.querySelectorAll('dd'),
         tr = document.querySelectorAll('tr');
   if (dd.length > 0) mapDescriptionListData(dd);
@@ -48,7 +48,7 @@ const mapCancelData = (row) => {
 const downloadFile = () => {
   const file = new Blob([JSON.stringify(charData, null, '\t')], {type: 'application/json'}),
         a    = document.createElement('a'),
-        name = charData.name.split(' / ')[0] + ` - ${charData.category}.json`;
+        name = charData.Name.split(' / ')[0] + ` - ${charData.Category}.json`;
   document.body.appendChild(a); // download doesn't work in firefox unless the <a> exists in the body
   a.style.display = 'none';
   a.href = URL.createObjectURL(file);
